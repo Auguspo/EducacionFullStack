@@ -1,56 +1,56 @@
 body {
-    background-color: #273238;
+  background-color: #273238;
 }
 
 h1 {
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-    background-color: white;
-    text-align: center;
-    font-weight: bolder;
-    
-    color: #698593;
-    text-transform: capitalize;
-   
+  font-family: "Impact", "Charcoal", "sans-serif";
+  background-color: white;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 3em;
+  letter-spacing: 2px;
+  color: #698593;
+  text-transform: capitalize;
 }
 
 h2 {
-    font-family: 'Arial', 'Impact', 'Charcoal', 'sans-serif';
-    font-weight:900;
-    text-transform: uppercase;
-    font-style: oblique;
-    text-transform: capitalize;
-    font-variant: small-caps;
+  font-family: "Arial", "Gadget", "sans-serif";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: oblique;
+  text-transform: capitalize;
+  font-variant: small-caps;
 }
 
 p {
-    font-family: Arial, Gadget, sans-serif;
-    color: #D0D8D2;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color:#3C63AE;
 }
 
 img {
-    border: 5px solid;
-    padding: 1px;
-    margin-left: 2.5%;
-    width: 25%;
-    height: auto;
+  border: 5px solid;
+  padding: 1px;
+  margin-left: 2.5%;
+  width: 25%;
+  height: auto;
 }
 
 .aspiradora {
-    color: #E6CBBF;
+  color: #e6cbbf;
 }
 
 .celular {
-    color: #A1C1CB
+  color: #a1c1cb;
 }
 
 .consolas {
-    color: #A1C1CB;
+  color: #a1c1cb;
 }
 
 .home-theaters {
-    color: #8D94A1;
+  color: #8d94a1;
 }
 
 .tv {
-    color: #B2B2AA
+  color: #b2b2aa;
 }
