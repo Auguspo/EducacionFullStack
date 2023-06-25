@@ -1,0 +1,50 @@
+body {
+    background-color: #EDECE9;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+a {
+    color: #EF6D24;
+    font-weight: bold;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+nav {
+    font-size: larger;
+}
+
+h1,
+p,
+li {
+    color: #775548;
+}
+
+h2 {
+    background-color: #775548;
+    color: #EDECE9
+}
+
+#nacion {
+    color: blue;
+}
+
+#pagina12 {
+    color: red;
+}
+
+#porQueElegirnos {
+    color: #D8B03B;
+}
+
+footer {
+    height: 200px;
+    text-align: center;
+    background-color: black;
+    color: yellow;
+    padding-top: 100px;
+    font-size: x-large;
+}
