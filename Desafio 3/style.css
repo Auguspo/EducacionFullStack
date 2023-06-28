@@ -29,7 +29,7 @@ h2 {
 }
 
 #nacion {
-    color: blue;
+    color: #3AABC4;
 }
 
 #pagina12 {
@@ -41,10 +41,10 @@ h2 {
 }
 
 footer {
-    height: 200px;
+    height: 100px;
     text-align: center;
     background-color: black;
     color: yellow;
-    padding-top: 100px;
+    padding-top: 10px;
     font-size: x-large;
 }
