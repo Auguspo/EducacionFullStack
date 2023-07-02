@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Afiliacion</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Veni al Gym!</h1>
+    </header>
+    <main>
+      <form>
+        <fieldset>
+          <legend>Datos Personales</legend>
+          Nombre:*<input required type="text" /><br />
+          Apellido:*<input required type="text" /><br />
+          Documento:*<input required type="text" /><br />
+
+          Nacionalidad:*<select  required>
+            <option value="">- Seleccionar -</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brasileña">Brasileña</option>
+            <option value="Uruguaya">Uruguaya</option>
+            <option value="Otra">Otra</option></select
+          ><br />
+          Contanos un poco de vos... <textarea name="acercaDe" id="" cols="30" rows="10"></textarea><br />
+
+          Sexo:*
+          <input
+            type="radio"
+            name="sexo"
+            value="Femenino"
+            checked="checked"
+            id=""
+            required
+          />Femenino
+          <input type="radio" name="sexo" value="OtroMaOtrosculino"  />Masculino
+          <input type="radio" name="sexo" value="Otro" />Otro
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos de Contacto</legend>
+          Telefono:+ <input placeholder="Codigo de area y numero" type="tel" name="Telefono" id="" /> <br />
+          Direccion de correo electronico:*
+          <input  placeholder="Ej: mail@gmail.com" type="email" name="email" id="" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Actividades</legend>
+          Por favor, indica cuales actividades te interesan. <br />
+          Sede Palermo: <br />
+          <input type="checkbox" name="Basquet" id="" />Basquet<input
+            type="checkbox"
+            name="Boxeo"
+            id=""
+          />Boxeo<input type="checkbox" name="Futbol" id="" />Futbol<input
+            type="checkbox"
+            name="Tenis"
+            id=""
+          />Tenis <br />
+          Sede Rosario: <br>
+          <input type="checkbox" name="Basquet" id="" />Basquet<input
+            type="checkbox"
+            name="Futbol"
+            id=""
+          />Futbol<input type="checkbox" name="Rugby" id="" />Rugby<input
+            type="checkbox"
+            name="Voley"
+            id=""
+          />Voley
+        </fieldset>
+
+        <input type="checkbox" name="condiciones" id="" required />Acepto las
+        condiciones* <input type="checkbox" name="novedades" id="" />Deseo
+        recibir novedades <br />
+
+        *: campo obligatorio. <br />
+
+        <button type="submit">Iniciar afiliacion</button>
+        <button type="reset">Restablecer</button>
+      </form>
+    </main>
+  </body>
+</html>
