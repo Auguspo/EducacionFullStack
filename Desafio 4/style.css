@@ -1,0 +1,65 @@
+body {
+  background-color: #1f2023;
+  color: white;
+  margin: 0 30% auto;
+}
+
+legend {
+  background-color: #4e6963;
+
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+fieldset:focus-within > legend {
+  background-color: #2b3d37;
+}
+
+fieldset {
+  margin: 20% 0 auto;
+  background-color: #d6e2de;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+}
+
+fieldset:focus-within {
+  background-color: #a6c1b9;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #4d6d63;
+}
+input,
+select,
+textarea {
+  border-radius: 5px;
+  width: 80%;
+  margin: 2.5% 10% 2.5% 10%;
+  height: 25px;
+  text-align: right;
+}
+textarea {
+  height: 150px;
+}
+
+input[type="radio"],
+[type="checkbox"] {
+  width: auto;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+select {
+  text-align: left;
+}
+#activities,
+legend {
+  text-align: left;
+}
+
+.lastButtons {
+  margin: 0 30% 0 30%;
+}
