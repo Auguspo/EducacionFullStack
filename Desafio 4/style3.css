@@ -1,15 +1,15 @@
-/* Perfil de estilo personalizado 2 */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 body {
-  background-color: #f7f7f7;
+  background-color: #fa95d0;
   color: #555555;
-  font-family: "Arial", sans-serif;
+  font-family: "Merriweather", sans-serif;
   margin: 0 15% auto;
 }
 
 .titulo {
   text-align: center;
-  border: 2px dotted #ff4081;
+  border: 10px double #ff4081;
   background-color: #ffffff;
   color: #ff4081;
   padding: 10px;
@@ -31,7 +31,7 @@ legend {
   padding: 5px 10px;
   font-family: "Courier New", monospace;
   font-size: 20px;
-  border: 1px solid #ff4081;
+  border: 5px double #ff4081;
   border-radius: 5px;
 }
 
@@ -42,7 +42,7 @@ fieldset:focus-within > legend {
 
 fieldset {
   background-color: #f5f5f5;
-  border: 1px solid #ff4081;
+  border: 10px double #ff4081;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
@@ -57,7 +57,7 @@ textarea {
   width: 80%;
   margin: 2.5% 10%;
   height: 25px;
-  text-align: right;
+  text-align: center;
   padding: 5px;
 }
 
