@@ -3,52 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style2.css" />  -->
+    <!-- <link rel="stylesheet" href="style3.css" /> -->
     <title>Afiliacion</title>
   </head>
 
   <body>
     <header>
-      <h1>Veni al Gym!💪</h1>
+      <h1 class="titulo">Veni al Gym!💪</h1>
     </header>
     <main>
       <form action="https://postman-echo.com/post" method="POST">
         <fieldset>
           <legend>🙋‍♂️Datos Personales👀</legend>
-          Nombre:*<input name="nombre" required type="text" /><br />
-          Apellido:*<input required name="apellido" type="text" /><br />
-          Documento:*<input required name="documento" type="text" /><br />
+          <label> Nombre:*<input name="nombre" required type="text" /></label>
+          <label
+            >Apellido:*<input required name="apellido" type="text"
+          /></label>
+          <label
+            >Documento:*<input required name="documento" type="text"
+          /></label>
 
-          Nacionalidad:*<select name="nacionalidad" required>
+         <label > Nacionalidad:*<select name="nacionalidad" required>
             <option value="">- Seleccionar -</option>
             <option value="Argentina">Argentina</option>
             <option value="Brasileña">Brasileña</option>
             <option value="Uruguaya">Uruguaya</option>
             <option value="Otra">Otra</option></select
-          ><br />
-          Contanos un poco de vos...
-          <textarea name="acercaDe" id="" cols="30" rows="10"></textarea><br />
+          ></label>
+         <label for=""> Contanos un poco de vos...
+          <textarea name="acercaDe"  cols="30" rows="10"></textarea></label>
 
-          Sexo:* <br />
+         <label > Sexo:* </label>
 
-          <input
-           
-            type="radio"
-            name="sexo"
-            value="Femenino"
-            checked="checked"
-            id=""
-            required
-          />Femenino
-          <input
-           
-            type="radio"
-            name="sexo"
-            value="OtroMaOtrosculino"
-          />Masculino
-          <input type="radio" name="sexo" value="Otro" />Otro
+         <label ><input type="radio" name="sexo" value="Femenino" checked="checked" required/>Femenino</label>
+          <label ><input type="radio" name="sexo" value="OtroMaOtrosculino" />Masculino</label>
+          <label ></label> <input type="radio" name="sexo" value="Otro" />Otro</label>
         </fieldset>
+
+        <hr />
 
         <fieldset>
           <legend>📱Datos de Contacto💌</legend>
@@ -57,7 +51,7 @@
             placeholder="Codigo de area y numero"
             type="tel"
             name="telefono"
-            id=""
+            
           />
           <br />
           Direccion de correo electronico:*
@@ -65,81 +59,36 @@
             placeholder="Ej: mail@gmail.com"
             type="email"
             name="email"
-            id=""
+            
           />
         </fieldset>
-
+        <hr />
         <fieldset id="activities">
           <legend>🚴Actividades🤸‍♂️</legend>
-          Por favor, indica cuales actividades te interesan. <br />
-          Sede Palermo: <br />
-          <input
-           
-            type="checkbox"
-            name="BasquetPalermo"
-            id=""
-          />Basquet
-          <input
-           
-            type="checkbox"
-            name="BoxeoPalermo"
-            id=""
-          />Boxeo
-          <input
-           
-            type="checkbox"
-            name="FutbolPalermo"
-            id=""
-          />Futbol
-          <input
-           
-            type="checkbox"
-            name="TenisPalermo"
-            id=""
-          />Tenis <br />
-          Sede Rosario: <br />
-          <input
-           
-            type="checkbox"
-            name="BasquetRosario"
-            id=""
-          />Basquet
-          <input
-           
-            type="checkbox"
-            name="FutbolRosario"
-            id=""
-          />Futbol
-          <input
-           
-            type="checkbox"
-            name="RugbyRosario"
-            id=""
-          />Rugby
-          <input
-           
-            type="checkbox"
-            name="VoleyRosario"
-            id=""
-          />Voley
+          <p>Por favor, indica cuales actividades te interesan.</p>
+          <p>Sede Palermo:</p> 
+          <label ><input type="checkbox" name="BasquetPalermo"  />Basquet</label>
+          <label ><input type="checkbox" name="BoxeoPalermo"  />Boxeo</label>
+          <label ><input type="checkbox" name="FutbolPalermo"  />Futbol</label>
+          <label ><input type="checkbox" name="TenisPalermo"  />Tenis </label>
+          <p>Sede Rosario:</p>
+          <label ><input type="checkbox" name="BasquetRosario"  />Basquet</label>
+          <label ><input type="checkbox" name="FutbolRosario"  />Futbol</label>
+          <label ><input type="checkbox" name="RugbyRosario"  />Rugby</label>
+          <label ><input type="checkbox" name="VoleyRosario"  />Voley</label>
         </fieldset>
 
-        
-        <input
-         
-          type="checkbox"
-          name="condiciones"
-          id=""
-          required
-        />Acepto las condiciones* <br>
-        <input type="checkbox" name="novedades" id="" />Deseo
-        recibir novedades <br />
+        <label ><input type="checkbox" name="condiciones"  required />Acepto las
+        condiciones* </label> <br>
+        <label ><input type="checkbox" name="novedades"  />Deseo recibir novedades
+        <br /></label>
 
-        *: campo obligatorio. <br />
+       <p>*: campo obligatorio. </p> 
 
         <div class="lastButtons">
-        <button type="submit">Iniciar afiliacion</button>
-        <button type="reset">Restablecer</button></div>
+          <button type="submit">Iniciar afiliacion</button>
+          <button type="reset">Restablecer</button>
+        </div>
       </form>
     </main>
   </body>

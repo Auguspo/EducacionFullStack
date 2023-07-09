@@ -1,12 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Roboto:wght@400&display=swap");
+
 body {
   background-color: #1f2023;
   color: white;
-  margin: 0 30% auto;
+  margin: 0 20% auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  border: #4d6d63 15px solid;
+  border-left: #1f2023 15px solid;
+  border-right: #1f2023 15px solid;
+  font-family: "Poppins", sans-serif;
+}
+
+hr {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border-top: 20px dotted #d6e2de;
+  width: 50%;
+  border-right-width:0;
+  border-left-width:0;
+  border-bottom :0;
 }
 
 legend {
   background-color: #4e6963;
-
   border-radius: 5px;
   color: white;
   padding: 10px;
@@ -17,7 +37,6 @@ fieldset:focus-within > legend {
 }
 
 fieldset {
-  margin: 20% 0 auto;
   background-color: #d6e2de;
   border-radius: 5px;
   text-align: center;
@@ -31,7 +50,9 @@ fieldset:focus-within {
 input:focus,
 textarea:focus {
   background-color: #4d6d63;
+  color: #d6e2de;
 }
+
 input,
 select,
 textarea {
@@ -61,5 +82,18 @@ legend {
 }
 
 .lastButtons {
-  margin: 0 30% 0 30%;
+  text-align: center;
+}
+
+button {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #4e6963;
+  color: #d6e2de;
+  margin: 1%;
+}
+
+button:hover {
+  background-color: #d6e2de;
+  color: #4e6963;
 }
