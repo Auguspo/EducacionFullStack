@@ -46,6 +46,10 @@ main {
   z-index: 1;
 }
 
+#subtitulo{
+  font-size:50px
+}
+
 section {
   margin: 20px;
   padding: 20px;
