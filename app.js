@@ -1,5 +1,5 @@
 let gatos = [];
-let blackBoxCounter = 1;
+let blackBoxCounter = 0;
 let catBox = document.getElementById("catContainer");
 
 function agregarGato(nroGato) {
@@ -21,11 +21,12 @@ function blackBox() {
     gatos.length >= 5 &&
     gatos.slice(-5).every((v) => v === gatos[gatos.length - 5])
   ) {
-    gatos = gatos.slice(0, gatos.length - 5);
+    gatos = [];
+    blackBoxCounter++;
     for (let i = 0; i < blackBoxCounter; i++) {
       gatos.unshift("⬛");
     }
-    console.log("Guardamos los 5 ultimos gatos");
+    console.log("Guardamos los gatos");
     console.log(gatos);
   } else {
     console.log("No hay suficientes gatos iguales para guardar");
