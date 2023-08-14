@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./cal.png" />
+    <title>Calculadora</title>
+  </head>
+
+  <body>
+    <div class="calculator">
+      <div class="textbox" id="display">0</div>
+
+      <div class="buttons">
+        <button class="button" onclick="updateDisplay(9)" id="nine">9</button>
+        <button class="button" onclick="updateDisplay(8)" id="eight">8</button>
+        <button class="button" onclick="updateDisplay(7)" id="seven">7</button>
+
+        <button class="button" onclick="updateDisplay('add')" id="add">
+          +
+        </button>
+        <button class="button" onclick="updateDisplay(6)" id="six">6</button>
+        <button class="button" onclick="updateDisplay(5)" id="five">5</button>
+        <button class="button" onclick="updateDisplay(4)" id="four">4</button>
+
+        <button
+          class="button"
+          onclick="updateDisplay('subtract')"
+          id="subtract"
+        >
+          -
+        </button>
+
+        <button class="button" onclick="updateDisplay(3)" id="three">3</button>
+        <button class="button" onclick="updateDisplay(2)" id="two">2</button>
+        <button class="button" onclick="updateDisplay(1)" id="one">1</button>
+
+        <button
+          class="button"
+          onclick="updateDisplay('multiply')"
+          id="multiply"
+        >
+          X
+        </button>
+
+        <button class="button" onclick="updateDisplay('decimal')" id="decimal">
+          .
+        </button>
+        <button class="button" onclick="updateDisplay(0)" id="zero">0</button>
+
+        <button class="button" onclick="updateDisplay('equals')" id="equals">
+          =
+        </button>
+        <button class="button" onclick="updateDisplay('divide')" id="divide">
+          /
+        </button>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
