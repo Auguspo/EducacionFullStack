@@ -1,91 +1,86 @@
-let trailingResult = 0;
-let operationals = ["add", "multiply", "divide", "subtract"];
-let workingOperational = "";
+let resultadoAnterior = 0;
+const operadores = ["suma", "multiplicacion", "division", "resta"];
+let operadorActivo = "";
 
 const display = document.getElementById("display");
-display.addEventListener("click", resetCalculator);
+display.addEventListener("click", reiniciarCalculadora);
 
-function updateDisplay(input) {
-
+function actualizarDisplay(input) {
   if (display.innerHTML.length >= 13) return;
 
-  if (display.innerHTML === "0" && operationals.indexOf(input) === -1) {
+  if (display.innerHTML === "0" && !esOperador(input)) {
     if (input === "decimal") {
       display.innerHTML = "0.";
-    } else {
+    } else if (input !== "igual") {
       display.innerHTML = input;
     }
-  } else if (operationals.indexOf(input) >= 0) {
-    handleOperationalInput(input);
-  } else if (input === "equals") {
-    if (workingOperational !== "") {
-      calculateResult();
+  } else if (esOperador(input)) {
+    manejarinputOperador(input);
+  } else if (input === "igual") {
+    if (operadorActivo !== "") {
+      calcularResultado();
     }
-  } else if (input === "decimal") {
-    if (display.innerHTML.indexOf(".") === -1) {
-      display.innerHTML += ".";
-    }
+  } else if (input === "decimal" && display.innerHTML.indexOf(".") === -1) {
+    display.innerHTML += ".";
   } else {
-    display.innerHTML += input;
+    agregarADisplay(input);
   }
 }
 
-function handleOperationalInput(input) {
-  console.log(
-    trailingResult + workingOperational + parseFloat(display.innerHTML)
-  );
-  if (workingOperational === "") {
-    workingOperational = input;
-    trailingResult = parseFloat(display.innerHTML);
+function esOperador(input) {
+  return operadores.includes(input);
+}
+
+function manejarinputOperador(input) {
+  if (operadorActivo === "") {
+    operadorActivo = input;
+    resultadoAnterior = parseFloat(display.innerHTML);
     display.innerHTML = "0";
   } else {
-    trailingResult = calculate(
-      trailingResult,
+    resultadoAnterior = calcular(
+      resultadoAnterior,
       parseFloat(display.innerHTML),
-      workingOperational
+      operadorActivo
     );
     display.innerHTML = "0";
-    workingOperational = input;
+    operadorActivo = input;
   }
 }
 
-function calculateResult() {
-  if (workingOperational !== "") {
-    trailingResult = calculate(
-      trailingResult,
+function calcularResultado() {
+  if (operadorActivo !== "") {
+    resultadoAnterior = calcular(
+      resultadoAnterior,
       parseFloat(display.innerHTML),
-      workingOperational
+      operadorActivo
     );
-    display.innerHTML = trailingResult;
-    workingOperational = "";
+    display.innerHTML = resultadoAnterior;
+    operadorActivo = "";
   }
 }
 
-function resetCalculator() {
+function agregarADisplay(input) {
+  display.innerHTML += input;
+}
+
+function reiniciarCalculadora() {
   display.innerHTML = "0";
-  trailingResult = 0;
-  workingOperational = "";
+  resultadoAnterior = 0;
+  operadorActivo = "";
 }
 
-function calculate(first, second, operational) {
-  let result;
-
-    switch (operational) {
-      case "add":
-        result = first + second;
-        break;
-      case "subtract":
-        result = first - second;
-        break;
-      case "divide":
-        result = first / second;
-        break;
-      case "multiply":
-        result = first * second;
-        break;
-      default:
-        console.log("ERROR");
-    }
-    return result;
-  
+function calcular(primero, segundo, operador) {
+  switch (operador) {
+    case "suma":
+      return primero + segundo;
+    case "resta":
+      return primero - segundo;
+    case "division":
+      return primero / segundo;
+    case "multiplicacion":
+      return primero * segundo;
+    default:
+      console.log("ERROR");
+      return null;
+  }
 }
