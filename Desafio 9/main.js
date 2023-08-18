@@ -6,13 +6,12 @@ const display = document.getElementById("display");
 display.addEventListener("click", resetCalculator);
 
 function updateDisplay(input) {
-
-  if (display.innerHTML.length >= 13) return;
-
   if (display.innerHTML === "0" && operationales.indexOf(input) === -1) {
+    
     if (input === "decimal") {
-      display.innerHTML = "0.";
-    }if (input !== "igual") {
+    
+      display.innerText = "0.";
+    }else if (input !== "igual") {
       display.innerHTML = input;
     }
   } else if (operationales.indexOf(input) >= 0) {
@@ -25,8 +24,7 @@ function updateDisplay(input) {
     if (display.innerHTML.indexOf(".") === -1) {
       display.innerHTML += ".";
     }
-  } else {
-   
+  } else if (display.innerHTML.length < 13) {
     display.innerHTML += input;
   }
 }
@@ -57,7 +55,11 @@ function calcular() {
       parseFloat(display.innerHTML),
       operacionalActual
     );
+
     display.innerHTML = resultadoAnterior;
+    if (display.innerHTML.length > 12)
+      display.innerHTML.slice(12, display.innerHTML.length);
+
     operacionalActual = "";
   }
 }
@@ -71,20 +73,21 @@ function resetCalculator() {
 function calculate(first, second, operational) {
   let result;
 
-    switch (operational) {
-      case "sumar":
-        result = first + second;
-        break;
-      case "restar":
-        result = first - second;
-        break;
-      case "dividir":
-        result = first / second;
-        break;
-      case "multiplicar":
-        result = first * second;
-        break;
-      default:
-        console.log("ERROR");
-    }
-    return result;}
+  switch (operational) {
+    case "sumar":
+      result = first + second;
+      break;
+    case "restar":
+      result = first - second;
+      break;
+    case "dividir":
+      result = first / second;
+      break;
+    case "multiplicar":
+      result = first * second;
+      break;
+    default:
+      console.log("ERROR");
+  }
+  return result;
+}
