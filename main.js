@@ -12,7 +12,7 @@ function updateDisplay(input) {
   if (display.innerHTML === "0" && operationales.indexOf(input) === -1) {
     if (input === "decimal") {
       display.innerHTML = "0.";
-    } else {
+    }if (input !== "igual") {
       display.innerHTML = input;
     }
   } else if (operationales.indexOf(input) >= 0) {
@@ -26,6 +26,7 @@ function updateDisplay(input) {
       display.innerHTML += ".";
     }
   } else {
+   
     display.innerHTML += input;
   }
 }
