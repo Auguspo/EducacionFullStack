@@ -28,6 +28,7 @@ body {
   float: left;
   margin: 1px;
   width: 64.75px;
+  height: 70px;
   border: none;
   color: white;
   background: black;
@@ -46,7 +47,7 @@ body {
   width: full;
   margin: auto;
   padding-right: 10px;
-  margin: 0 7% 0 5%;
+  margin: 0 7.5% 0 5%;
   border: 1px solid black;
   border-radius: 5px;
   font-size:40px ;
