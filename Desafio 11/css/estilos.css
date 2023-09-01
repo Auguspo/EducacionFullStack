@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+html {
+  background-color: #4c7b9d;
+  background-image: url("./img/ciudad.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: ;
+  background-position: bottom center;
+  background-size: 100% auto;
+}
+
+body {
+  background-color: #acdadc;
+  border-radius: 10px;
+  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.5);
+  margin: 10%;
+  margin-top: 125px;
+  padding: 40px;  
+
+}
+html::after {
+    content: url("./img/gato.png");
+    display: block;
+    text-align: center; /* Centra horizontalmente */
+    vertical-align: middle; /* Centra verticalmente */
+    margin-top: -10% ;
+    margin-bottom: 5% ;
+
+
+  }
+
+h1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #df3448;
+  font-size: 40px;
+  color: white;
+  margin-top: 0;
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+h1,
+h2 {
+  font-family: "Lobster", cursive;
+  text-align: center;
+}
+
+h2 {
+  color: #df3448;
+  font-size: 35px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 + p {
+  font-style: italic;
+  font-size: 22px;
+  text-align: center;
+}
+
+h2 + p::before {
+  content: " - ";
+}
+h2 + p::after {
+  content: " - ";
+}
+
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-transform: capitalize;
+}
