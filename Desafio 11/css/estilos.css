@@ -5,35 +5,39 @@ html {
   background-image: url("./img/ciudad.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: ;
   background-position: bottom center;
   background-size: 100% auto;
+  width: 100%;
+  margin-bottom: 300px;
+
 }
 
 body {
   background-color: #acdadc;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.5);
   margin: 10%;
   margin-top: 125px;
-  padding: 40px;  
-
+  padding: 40px;
+  margin-bottom: 200px;
+  position: relative;
 }
-html::after {
-    content: url("./img/gato.png");
-    display: block;
-    text-align: center; /* Centra horizontalmente */
-    vertical-align: middle; /* Centra verticalmente */
-    margin-top: -10% ;
-    margin-bottom: 5% ;
-
-
-  }
+body::after {
+  content: url("./img/gato.png");
+  display: block;
+  width: 20%;
+  height: 50px;
+   position: absolute;
+  top: 96%;
+  left: 35%; 
+  justify-content:center;
+}
 
 h1 {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%; 
+  transform: translateX(-50%); 
   width: 100%;
   background-color: #df3448;
   font-size: 40px;
@@ -41,13 +45,19 @@ h1 {
   margin-top: 0;
   padding: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center; 
 }
+
 h1,
-h2 {
+h2,
+p::first-letter {
   font-family: "Lobster", cursive;
   text-align: center;
 }
 
+p::first-letter {
+  font-size: 35px;
+}
 h2 {
   color: #df3448;
   font-size: 35px;
@@ -70,5 +80,10 @@ h2 + p::after {
 p {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  text-transform: capitalize;
+  color: #213557;
+  font-size: 18px;
+}
+
+p:last-child {
+  margin-bottom: 200px;
 }
