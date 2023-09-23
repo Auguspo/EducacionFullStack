@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de la tienda">
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="alta.html">Agregar Producto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Acerca de Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contacto</h1>
+        <form action="procesar-contacto.php" method="POST">
+            <!-- Campos del formulario (nombre, email, comentarios) -->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <!-- Agrega más campos del formulario aquí -->
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+
+    <footer>
+        <p>Tu Tienda de Productos &copy; 2023. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* Reset de estilos para asegurar consistencia en diferentes navegadores */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para el header y la barra de navegación */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilo para el footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
