@@ -2,13 +2,12 @@ h1 {
   font-size: 1.5rem;
   margin-top: 20px;
 }
-html {
-  margin: 0 0 0 0;
-}
+
 main {
   width: 60%;
   margin: 0 auto;
 }
+
 label {
   font-weight: bold;
 }
@@ -20,6 +19,7 @@ input[type="text"] {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+
 textarea {
   padding: 10px;
   max-width: 100%;
@@ -44,6 +44,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #0056b3;
 }
+
 input[type="file"],
 input[type="checkbox"] {
   margin: 10px 0 10px;
