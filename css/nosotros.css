@@ -1,0 +1,35 @@
+main p {
+    text-align: justify;
+}
+
+h1 {
+    margin: 10%;
+    margin-bottom: 0;
+    margin-top: 5%;
+}
+
+main {
+    margin: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+img {
+    width: 60%;
+    margin-left: 10%;
+}
+
+.acerca-de-nosotros-contenedor {
+    display: flex; /* Utiliza flexbox para alinear elementos en fila */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+}
+
+.texto {
+    flex: 1; /* Hace que el div de texto ocupe el espacio restante */
+}
+
+.imagen {
+    flex: 1; /* Hace que el div de imagen ocupe el espacio restante */
+}
+
+/* Puedes agregar estilos adicionales según tu diseño específico */

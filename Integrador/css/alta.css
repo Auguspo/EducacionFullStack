@@ -76,3 +76,28 @@ form div:last-child {
   align-items: center;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  header img {
+    width: 60px;
+    margin: 0 10px;
+  }
+
+  nav ul {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  main {
+    width: 95%;
+  }
+
+  form div {
+    flex: 1;
+    margin: 0;
+  }
+}

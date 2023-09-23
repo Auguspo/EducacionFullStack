@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="icon" type="image/x-icon" href="./css/img/logo.ico" />
     <title>Autos de la Bahia</title>
   </head>
   <body>
@@ -19,10 +20,11 @@
         </ul>
       </nav>
     </header>
-
+    <div class="banner">
+      <h1>Autos de la Bahía</h1>
+    </div>
     <main>
       <div class="product-cards-container">
-        <!-- Aquí van las cards de productos -->
         <!-- Producto 1 -->
         <div class="product-card">
           <img src="./css/img/camry.jpg" alt="Toyota Camry 2023" />
@@ -33,6 +35,12 @@
             aventura comienza aquí.
           </p>
           <a href="#" class="buy-button">Agregar al carrito</a>
+          <a class="buy-button show-more">Mostrar más</a>
+          <div class="more-info">
+            <p>
+              Motor V6 de 3.5 litros, transmisión automática de 8 velocidades.
+            </p>
+          </div>
         </div>
 
         <!-- Producto 2 -->
@@ -45,6 +53,13 @@
             cualquier destino.
           </p>
           <a href="#" class="buy-button">Agregar al carrito</a>
+          <a class="buy-button show-more">Mostrar más</a>
+          <div class="more-info">
+            <p>
+              Sistema de tracción en las cuatro ruedas, capacidad de remolque de
+              5,000 libras.
+            </p>
+          </div>
         </div>
 
         <!-- Producto 3 -->
@@ -57,6 +72,13 @@
             estilo en uno.
           </p>
           <a href="#" class="buy-button">Agregar al carrito</a>
+          <a class="buy-button show-more">Mostrar más</a>
+          <div class="more-info">
+            <p>
+              Motor de 4 cilindros en línea, economía de combustible de hasta 40
+              mpg en carretera.
+            </p>
+          </div>
         </div>
 
         <!-- Producto 4 -->
@@ -72,6 +94,13 @@
             seguridad en carretera.
           </p>
           <a href="#" class="buy-button">Agregar al carrito</a>
+          <a class="buy-button show-more">Mostrar más</a>
+          <div class="more-info">
+            <p>
+              Juego de 4 cubiertas, diseño de banda de rodadura para tracción en
+              todas las condiciones climáticas.
+            </p>
+          </div>
         </div>
 
         <!-- Producto 5 -->
@@ -87,16 +116,27 @@
             vehículo en su mejor estado.
           </p>
           <a href="#" class="buy-button">Agregar al carrito</a>
+          <a class="buy-button show-more">Mostrar más</a>
+          <div class="more-info">
+            <p>
+              Servicios de cambio de aceite, inspección de frenos y más por
+              técnicos certificados.
+            </p>
+          </div>
         </div>
 
         <!-- Producto 6 -->
         <div class="product-card" id="product-6">
-            <img src="./css/img/producto_placeholder.jpg" alt="" />
-            <h2></h2>
-            <p>Precio: $0</p>
-            <p></p>
-            <a href="#" class="buy-button">Agregar al carrito</a>
+          <img src="./css/img/producto_placeholder.jpg" alt="" />
+          <h2></h2>
+          <p>Precio: $0</p>
+          <p></p>
+          <a href="#" class="buy-button">Agregar al carrito</a>
+          <a class="buy-button show-more">Mostrar más</a>
+          <div class="more-info">
+            <p>Detalles adicionales de la tarjeta 1.</p>
           </div>
+        </div>
       </div>
     </main>
 
@@ -104,6 +144,6 @@
       <p>Tu Tienda de Productos &copy; 2023. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
