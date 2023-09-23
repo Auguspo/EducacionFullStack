@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/alta.css" />
+    <title>Agregar Producto</title>
+  </head>
+  <body>
+    <header><img src="./css/img/logo.png" alt="Logo de la tienda"></li>
+      <nav>
+         
+          <ul> <li>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="alta.html">Agregar Producto</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="nosotros.html">Acerca de Nosotros</a></li>
+          </ul>
+      </nav>
+  </header>
+
+    <main>
+        <div> 
+        <div>
+            <h1>Agregar Producto</h1>
+            <form id="product-form">
+            <div id="col-der">
+            <label for="nombre">*Nombre:</label><br />
+            <input type="text" id="nombre" name="nombre" required /><br />
+
+            <label for="precio">*Precio:</label><br />
+            <input type="text" id="precio" name="precio" required /><br />
+
+            <label for="stock">*Stock:</label><br />
+            <input type="text" id="stock" name="stock" required /><br />
+
+            <label for="marca">*Marca:</label><br />
+            <input type="text" id="marca" name="marca" required /><br />
+
+            <label for="categoria">*Categoria:</label><br />
+            <input type="text" id="categoria" name="categoria" required /><br />
+
+            <label for="descripcion_corta">*Descripcion corta:</label><br />
+            <input
+            type="text"
+            id="descripcion_corta"
+            name="descripcion_corta"
+            required
+            /><br />
+        </div>
+
+        <div id="col-izq">
+            <label for="descripcion_larga">Descripcion larga:</label><br />
+            <textarea type="text" id="descripcion_larga" name="descripcion_larga" placeholder="Ingrese descripcion detallada.">
+            </textarea><br />
+
+           
+            <label for="foto">Foto:</label><br />
+            <input type="file" name="foto" id="foto" /><br />
+            <input type="checkbox" name="envio_SC" id="envio_SC" /><label
+            for="envio"
+            >Envio sin cargo</label
+            ><br /> 
+        
+        </div> 
+    </div> 
+    <div id="contenedor_submit">
+      <button type="button" id="submitButton">Agregar Producto</button>
+    </div>
+    </form>
+    </main>
+    <footer>
+      <p>Tu Tienda de Productos &copy; 2023. Todos los derechos reservados.</p>
+    </footer>
+
+ 
+    <script src="./js/script.js"></script>
+
+  </body>
+</html>
