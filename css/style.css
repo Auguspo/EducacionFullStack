@@ -1,10 +1,8 @@
-/* Reset de estilos para asegurar consistencia en diferentes navegadores */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* Estilo para el header y la barra de navegación */
 header {
   background-color: #333;
   color: white;
@@ -26,21 +24,17 @@ header nav ul li a {
   font-weight: bold;
 }
 
-/* Establece una altura máxima para el contenido principal */
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* 100% de la altura de la ventana */
-  overflow-y: scroll; /* Agrega una barra de desplazamiento vertical si es necesario */
+  min-height: 100vh;
+  overflow-y: scroll;
 }
 
-/* Contenido principal (ajusta el nombre según corresponda) */
 .main-content {
   flex-grow: 1;
-  /* Agrega otros estilos específicos para el contenido principal si es necesario */
 }
 
-/* Estiliza el footer */
 footer {
   background-color: #333;
   color: white;
@@ -48,7 +42,7 @@ footer {
   padding: 10px 0;
   position: sticky;
   bottom: 0;
-  margin-top: auto; /* Esto empujará el footer hacia abajo al final de la página */
+  margin-top: auto;
 }
 
 header img {
@@ -73,17 +67,37 @@ nav ul li {
   margin-right: 20px;
 }
 
-/* Estilos para las cards de productos */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 body {
-    font-family: 'Roboto', sans-serif;
-    /* Aquí puedes definir otros estilos de fuente, tamaño, etc., para el cuerpo del documento */
+  font-family: "Roboto", sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
-    /* Aplicar la fuente Roboto a los encabezados */
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
 }
 
-/* Resto de tus estilos CSS */
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+.show-more {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.more-info {
+  display: none;
+}
+
+.more-info {
+  display: none;
+}
