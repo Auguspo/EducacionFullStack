@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 01 - Fase 1</title>
+    <style>
+      h2 {
+        color: blue;
+      }
+      main {
+        height: 50vh;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Adaptar esta página web para que permita cambiar el color de fondo del
+      contenedor main. Los colores disponibles serán: rojo, verde, azul y negro
+      y se seleccionarán desde un array. Se dispondrá de dos botones para
+      avanzar y retroceder respectivamente la selección del color. En caso de
+      llegar al final se comenzará desde el principio y viceversa. No utilizar
+      id ni clases para referenciar los botones. El color seleccionado se
+      indicará por debajo de los botones en un elemento h2 con texto en blanco
+      (NO se deberá cambiar el color de este mismo texto). Utilizar
+      constructores de variables de ES6 y arrow functions y registro de eventos
+      con addEventListener. Permitir incorporar más colores al array, sin hacer
+      modificaciones al código.
+    </h2>
+    <hr />
+
+    <main>
+      <button id="colorPrev">Cambiar Color -</button>
+      <button id="colorNext">Cambiar Color +</button>
+      <h2></h2>
+    </main>
+
+    <script>
+      // Array de colores disponibles
+      let colores = ["red", "green", "blue", "black"];
+      let colorInput = ""; // Variable para almacenar las teclas presionadas
+
+      // Elementos HTML
+      const mainElement = document.querySelector("main");
+      const h2Element = document.querySelector("main h2");
+      const colorPrevButton = document.getElementById("colorPrev");
+      const colorNextButton = document.getElementById("colorNext");
+
+      let colorIndex = 0; // Índice del color actual
+
+      // Función para cambiar el color de fondo
+      const cambiarColorFondo = () => {
+        mainElement.style.backgroundColor = colores[colorIndex];
+        h2Element.textContent =
+          colores[colorIndex].charAt(0).toUpperCase() +
+          colores[colorIndex].slice(1);
+      };
+
+      // Evento al hacer clic en el botón "Cambiar Color -"
+      colorPrevButton.addEventListener("click", () => {
+        colorIndex = (colorIndex - 1 + colores.length) % colores.length;
+        cambiarColorFondo();
+      });
+
+      // Evento al hacer clic en el botón "Cambiar Color +"
+      colorNextButton.addEventListener("click", () => {
+        colorIndex = (colorIndex + 1) % colores.length;
+        cambiarColorFondo();
+      });
+
+      // Evento para capturar las teclas presionadas
+      document.addEventListener("keydown", (event) => {
+        const key = event.key.toLowerCase(); 
+        if(event.key!=="Enter")// Convertir la tecla a minúsculas
+        colorInput += key; // Agregar la tecla al string
+      });
+
+      // Evento al presionar la tecla "Enter"
+      document.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+          // Dividir el string en colores (suponemos que las teclas están separadas por comas)
+          const nuevosColores = colorInput.split(",");
+
+          // Agregar los nuevos colores al array y limpiar el string
+          colores = [...colores, ...nuevosColores];
+          colorInput = "";
+
+          cambiarColorFondo(); // Actualizar el color de fondo
+        }
+      });
+    </script>
+  </body>
+</html>
