@@ -31,25 +31,25 @@
     <hr />
 
     <main>
-      <button id="colorPrev">Cambiar Color -</button>
-      <button id="colorNext">Cambiar Color +</button>
+      <button >Cambiar Color -</button>
+      <button >Cambiar Color +</button>
       <h2></h2>
     </main>
 
     <script>
-      // Array de colores disponibles
+      console.log(
+        "Escribe en la pantalla un color y apreta enter para agregarlo al array"
+      );
       let colores = ["red", "green", "blue", "black"];
-      let colorInput = ""; // Variable para almacenar las teclas presionadas
+      let colorInput = "";
 
-      // Elementos HTML
       const mainElement = document.querySelector("main");
       const h2Element = document.querySelector("main h2");
-      const colorPrevButton = document.getElementById("colorPrev");
-      const colorNextButton = document.getElementById("colorNext");
+      var buttons = document.getElementsByTagName('button');
+        const colorPrevButton = buttons[0];
+        const colorNextButton = buttons[1];
+      let colorIndex = 0;
 
-      let colorIndex = 0; // Índice del color actual
-
-      // Función para cambiar el color de fondo
       const cambiarColorFondo = () => {
         mainElement.style.backgroundColor = colores[colorIndex];
         h2Element.textContent =
@@ -57,36 +57,30 @@
           colores[colorIndex].slice(1);
       };
 
-      // Evento al hacer clic en el botón "Cambiar Color -"
       colorPrevButton.addEventListener("click", () => {
         colorIndex = (colorIndex - 1 + colores.length) % colores.length;
         cambiarColorFondo();
       });
 
-      // Evento al hacer clic en el botón "Cambiar Color +"
       colorNextButton.addEventListener("click", () => {
         colorIndex = (colorIndex + 1) % colores.length;
         cambiarColorFondo();
       });
 
-      // Evento para capturar las teclas presionadas
       document.addEventListener("keydown", (event) => {
-        const key = event.key.toLowerCase(); 
-        if(event.key!=="Enter")// Convertir la tecla a minúsculas
-        colorInput += key; // Agregar la tecla al string
+        const key = event.key.toLowerCase();
+        if (event.key !== "Enter") colorInput += key;
       });
 
-      // Evento al presionar la tecla "Enter"
       document.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
-          // Dividir el string en colores (suponemos que las teclas están separadas por comas)
           const nuevosColores = colorInput.split(",");
+          console.log(nuevosColores);
 
-          // Agregar los nuevos colores al array y limpiar el string
           colores = [...colores, ...nuevosColores];
           colorInput = "";
 
-          cambiarColorFondo(); // Actualizar el color de fondo
+          cambiarColorFondo();
         }
       });
     </script>
