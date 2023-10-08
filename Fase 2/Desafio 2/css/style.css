@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 200px;
+  }
+  
+  input {
+    width: 98%;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  input[type="checkbox"] {
+    width: auto;
+  }
+  
+  #resultado {
+    font-weight: bold;
+  }
+  
+  #ultimaActualizacion {
+    font-size: 12px;
+    color: #888;
+  }
+  
