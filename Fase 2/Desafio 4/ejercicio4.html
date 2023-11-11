@@ -70,56 +70,63 @@
     </div>
 
     <script>
-      const dropZones = document.querySelectorAll(".drop-zone");
+  class ImageLoader {
+        async start() {
+          const dropZones = document.querySelectorAll(".drop-zone");
 
-      dropZones.forEach((zone, index) => {
-        zone.addEventListener("dragover", (e) => {
-          e.preventDefault();
-          zone.style.border = "3px dashed red";
-        });
+          dropZones.forEach((zone, index) => {
+            zone.addEventListener("dragover", (e) => {
+              e.preventDefault();
+              zone.style.border = "3px dashed red";
+            });
 
-        zone.addEventListener("dragleave", () => {
-          zone.style.border = "3px dashed blue";
-        });
+            zone.addEventListener("dragleave", () => {
+              zone.style.border = "3px dashed blue";
+            });
 
-        zone.addEventListener("drop", (e) => {
-          e.preventDefault();
-          const file = e.dataTransfer.files[0];
-          displayImage(index + 1, file);
-        });
+            zone.addEventListener("drop", (e) => {
+              e.preventDefault();
+              const file = e.dataTransfer.files[0];
+              this.displayImage(index + 1, file);
+            });
 
-        const fileInput = document.getElementById(`file-input${index + 1}`);
-        fileInput.addEventListener("change", (e) => {
-          const file = e.target.files[0];
-          displayImage(index + 1, file);
-        });
-        zone.addEventListener("click", () => {
-          fileInput.click();
-        });
-      });
+            const fileInput = document.getElementById(`file-input${index + 1}`);
+            fileInput.addEventListener("change", (e) => {
+              const file = e.target.files[0];
+              this.displayImage(index + 1, file);
+            });
+            zone.addEventListener("click", () => {
+              fileInput.click();
+            });
+          });
+        }
 
-      //Timer 2seg
+        async delay(ms) {
+          return new Promise((resolve) => setTimeout(resolve, ms));
+        }
 
-      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+        async displayImage(zoneNumber, file) {
+          const zone = document.getElementById(`zona${zoneNumber}`);
+          const label = zone.querySelector("label");
 
-      const displayImage = async (zoneNumber, file) => {
-        const zone = document.getElementById(`zona${zoneNumber}`);
-        const label = zone.querySelector("label");
+          zone.style.backgroundImage = "none";
+          zone.innerText = "Cargando...";
+          await this.delay(1000);
+          zone.innerText = "Cargando 50%";
+          await this.delay(1000);
 
-        zone.style.backgroundImage = "none";
-        zone.innerText = "Cargando...";
-        await delay(1000);
-        zone.innerText = "Cargando 50%";
-        await delay(1000);
+          label.style.display = "none";
+          zone.style.border = "3px dashed green";
+          const img = new Image();
+          img.src = URL.createObjectURL(file);
 
-        label.style.display = "none";
-        zone.style.border = "3px dashed green";
-        const img = new Image();
-        img.src = URL.createObjectURL(file);
+          zone.innerHTML = "";
+          zone.appendChild(img);
+        }
+      }
 
-        zone.innerHTML = "";
-        zone.appendChild(img);
-      };
+      const imageLoader = new ImageLoader();
+      imageLoader.start()
     </script>
   </body>
 </html>
