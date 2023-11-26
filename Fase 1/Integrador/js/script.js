@@ -14,3 +14,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+//alta
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("product-form");
+  form.addEventListener("submit", function (event) {
+    const requiredInputs = document.querySelectorAll(".required-input");
+
+    let isValid = true;
+
+    requiredInputs.forEach(function (input) {
+      if (input.value.trim() === "") {
+        input.classList.add("error"); 
+        isValid = false;
+      } else {
+        input.classList.remove("error"); 
+      }
+    });
+
+    if (!isValid) {
+      event.preventDefault(); 
+      alert("Por favor, complete todos los campos requeridos.");
+    }
+  });
+});

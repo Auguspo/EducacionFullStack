@@ -8,6 +8,14 @@ main {
   margin: 0 auto;
 }
 
+.required-input {
+  border: 2px solid #ccc;
+}
+
+.required-input.error {
+  border-color: #ff0000;
+}
+
 label {
   font-weight: bold;
 }

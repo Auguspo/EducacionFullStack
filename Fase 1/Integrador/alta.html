@@ -28,27 +28,29 @@
             <form id="product-form">
             <div id="col-der">
             <label for="nombre">*Nombre:</label><br />
-            <input type="text" id="nombre" name="nombre" required /><br />
+            <input type="text" id="nombre" name="nombre" class="required-input" /><br />
 
             <label for="precio">*Precio:</label><br />
-            <input type="text" id="precio" name="precio" required min="0" /><br />
+            <input type="text" id="precio" name="precio" class="required-input" min="0" /><br />
 
             <label for="stock">*Stock:</label><br />
-            <input type="text" id="stock" name="stock" required min="0" /><br />
+            <input type="text" id="stock" name="stock" class="required-input" min="0" /><br />
 
             <label for="marca">*Marca:</label><br />
-            <input type="text" id="marca" name="marca" required /><br />
+            <input type="text" id="marca" name="marca" class="required-input" /><br />
 
             <label for="categoria">*Categoria:</label><br />
-            <input type="text" id="categoria" name="categoria" required /><br />
+            <input type="text" id="categoria" name="categoria" class="required-input" /><br />
 
             <label for="descripcion_corta">*Descripcion corta:</label><br />
             <input
             type="text"
             id="descripcion_corta"
             name="descripcion_corta"
-            required
+            class="required-input"
             /><br />
+            <label for="modelo">*Modelo:</label><br />
+            <input type="text" id="modelo" name="modelo" class="required-input" /><br />
         </div>
 
         <div id="col-izq">
@@ -63,6 +65,8 @@
             for="envio"
             >Envio sin cargo</label
             ><br /> 
+
+            
         
         </div> 
     </div> 

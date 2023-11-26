@@ -5,14 +5,17 @@ import Home from "./components/Home";
 import Alta from "./components/Alta";
 import Contacto from "./components/Contacto";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 import {
   addToCart,
   removeFromCart,
   submitProducto,
   submitComentario,
-  removeElementToCart,addElementToCart
+  removeElementToCart,
+  addElementToCart,
 } from "./services/api";
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -39,35 +42,34 @@ const App = () => {
   const handleAddElement = (productoId) => {
     setCartItems(addElementToCart(cartItems, productoId));
   };
-  
 
   return (
-    <Router>
+    <Router >
       <Navbar bg="light" expand="lg" sticky="top">
-        <Navbar.Brand as={Link} to="/">
-          Tienda Online
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
-              Productos
-            </Nav.Link>
-            <Nav.Link as={Link} to="/alta">
-              Alta Producto
-            </Nav.Link>
-            <Nav.Link as={Link} to="/contacto">
-              Contacto
-            </Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link as={Link} to="/cart">
-              Carrito
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <Routes>
+      <Navbar.Brand className="ms-3"as={Link} to="/">
+        Tienda Online
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto mx-3">
+          <Nav.Link as={Link} to="/">
+            Productos
+          </Nav.Link>
+          <Nav.Link as={Link} to="/alta">
+            Alta Producto
+          </Nav.Link>
+          <Nav.Link as={Link} to="/contacto">
+            Contacto
+          </Nav.Link>
+        </Nav>
+        <Nav>
+          <Nav.Link className="fs-2 ms-auto mx-3" as={Link} to="/cart">
+            🛒
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+      <Routes >
         <Route path="/" element={<Home addToCart={handleAddToCart} />} />
         <Route
           path="/alta"
@@ -77,10 +79,10 @@ const App = () => {
           path="/contacto"
           element={<Contacto onSubmit={handleComentarioSubmit} />}
         />
-        <Route
+        <Route 
           path="/cart"
-          element={
-            <Cart
+          element={ 
+            <Cart 
               cartItems={cartItems}
               removeFromCart={handleRemoveFromCart}
               removeElement={handleRemoveElement}
@@ -89,7 +91,9 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer/>
     </Router>
+   
   );
 };
 

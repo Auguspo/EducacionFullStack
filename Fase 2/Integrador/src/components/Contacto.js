@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
@@ -9,7 +7,6 @@ const Contacto = () => {
     email: '',
     asunto: '',
     descripcion: '',
-    // Otros campos...
   });
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -40,7 +37,6 @@ const Contacto = () => {
           email: '',
           asunto: '',
           descripcion: '',
-          // Otros campos...
         });
       } catch (error) {
         console.error('Error al enviar datos de contacto:', error);
@@ -68,11 +64,11 @@ const Contacto = () => {
   };
 
   return (
-    <div className="container mx-auto my-8">
-      <h2 className="text-3xl font-bold mb-4">Contacto</h2>
-      <form onSubmit={handleSubmit} className="max-w-md">
-        <div className="mb-4">
-          <label htmlFor="nombre" className="block text-gray-700 text-sm font-bold mb-2">
+    <div className="container mt-5 min-vh-100">
+      <h2 className="text-left text-dark mb-4">Contacto</h2>
+      <form onSubmit={handleSubmit} className="mx-auto max-w-lg">
+        <div className="mb-3">
+          <label htmlFor="nombre" className="form-label">
             Nombre
           </label>
           <input
@@ -81,13 +77,13 @@ const Contacto = () => {
             name="nombre"
             value={formData.nombre}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="form-control"
             placeholder="Nombre"
             required
           />
         </div>
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
             Email
           </label>
           <input
@@ -96,13 +92,13 @@ const Contacto = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="form-control"
             placeholder="Email"
             required
           />
         </div>
-        <div className="mb-4">
-          <label htmlFor="asunto" className="block text-gray-700 text-sm font-bold mb-2">
+        <div className="mb-3">
+          <label htmlFor="asunto" className="form-label">
             Asunto
           </label>
           <input
@@ -111,13 +107,13 @@ const Contacto = () => {
             name="asunto"
             value={formData.asunto}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="form-control"
             placeholder="Asunto"
             required
           />
         </div>
-        <div className="mb-4">
-          <label htmlFor="descripcion" className="block text-gray-700 text-sm font-bold mb-2">
+        <div className="mb-3">
+          <label htmlFor="descripcion" className="form-label">
             Descripción
           </label>
           <textarea
@@ -125,16 +121,15 @@ const Contacto = () => {
             name="descripcion"
             value={formData.descripcion}
             onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="form-control"
             placeholder="Escribe tu descripción aquí"
             rows="4"
             required
           ></textarea>
         </div>
-        {/* Otros campos... */}
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="btn btn-primary"
         >
           Enviar Mensaje
         </button>

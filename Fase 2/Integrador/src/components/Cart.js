@@ -1,10 +1,11 @@
 import React from 'react';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Cart = ({ cartItems, removeFromCart, removeElement, addElement }) => {
   return (
-    <div>
-      <h2>Carrito de Compras</h2>
+    <div className="container mt-5 min-vh-100 ">
+      <h2 className="text-left mb-4">Carrito de Compras</h2>
+      {cartItems.length === 0 && <p>El carrito se encuentra vacio.</p>}
       {cartItems.map((item) => (
         <div key={item.id}>
           <img src={item.imagen} alt={item.nombre} />
