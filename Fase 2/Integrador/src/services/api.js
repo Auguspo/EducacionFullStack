@@ -1,4 +1,4 @@
-const API_BASE_URL = "https:
+const API_BASE_URL = "https://655a920b6981238d054d92cb.mockapi.io/productos"
 
 export const getProductos = async () => {
   try {
