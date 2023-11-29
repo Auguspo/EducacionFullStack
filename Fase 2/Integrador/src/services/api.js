@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://655a920b6981238d054d92cb.mockapi.io/productos"
+const API_BASE_URL = "https://655a920b6981238d054d92cb.mockapi.io/productos";
 
 export const getProductos = async () => {
   try {
@@ -8,7 +8,7 @@ export const getProductos = async () => {
     return data;
   } catch (error) {
     console.error("Error al obtener productos:", error);
-    throw error; 
+    throw error;
   }
 };
 
@@ -16,16 +16,13 @@ export const addToCart = (cartItems, producto) => {
   const existingItem = cartItems.find((item) => item.id === producto.id);
 
   if (existingItem) {
-    
     return addElementToCart(cartItems, producto.id);
   }
 
-  
   return [...cartItems, { ...producto, cantidad: 1 }];
 };
 
 export const removeFromCart = (cartItems, productoId) => {
-  
   const updatedCart = cartItems.filter((item) => item.id !== productoId);
   return updatedCart;
 };
@@ -33,12 +30,9 @@ export const removeFromCart = (cartItems, productoId) => {
 export const addElementToCart = (cartItems, productoId) => {
   const updatedCart = cartItems.map((item) => {
     if (item.id === productoId) {
-      
-      if(item.cantidad === item.stock)
       if (item.cantidad < item.stock) {
         return { ...item, cantidad: item.cantidad + 1 };
       } else {
-        
         return { ...item, stockLimitReached: true };
       }
     }
@@ -50,7 +44,9 @@ export const addElementToCart = (cartItems, productoId) => {
 
 export const removeElementToCart = (cartItems, productoId) => {
   const updatedCart = cartItems.map((item) =>
-    item.id === productoId ? { ...item, cantidad: item.cantidad - 1, stockLimitReached: false} : item
+    item.id === productoId
+      ? { ...item, cantidad: item.cantidad - 1, stockLimitReached: false }
+      : item
   );
 
   const itemToUpdate = updatedCart.find((item) => item.id === productoId);
@@ -76,16 +72,14 @@ export const submitProducto = async (productoData) => {
     return data;
   } catch (error) {
     console.error("Error al enviar producto:", error);
-    throw error; 
+    throw error;
   }
 };
 
 export const submitComentario = async (comentarioData) => {
-  
   try {
-    
   } catch (error) {
     console.error("Error al enviar comentario:", error);
-    throw error; 
+    throw error;
   }
 };
