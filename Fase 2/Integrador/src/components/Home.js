@@ -25,13 +25,13 @@ const Home = ({ addToCart }) => {
   const handleAddToCart = (producto) => {
     addToCart(producto);
 
-    // Establecer el producto actual como añadido al carrito
+    
     setAddedToCartMap((prevMap) => ({
       ...prevMap,
       [producto.id]: true,
     }));
 
-    // Revertir el estado después de 2 segundos
+    
     setTimeout(() => {
       setAddedToCartMap((prevMap) => ({
         ...prevMap,

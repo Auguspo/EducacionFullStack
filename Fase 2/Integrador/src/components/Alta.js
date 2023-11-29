@@ -30,7 +30,7 @@ const Alta = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validación de Datos
+    
     if (validateData()) {
       try {
         const response = await fetch(
@@ -46,7 +46,7 @@ const Alta = () => {
 
         if (response.ok) {
           console.log("Datos enviados correctamente a mockapi.io");
-          // Mostrar el modal de éxito
+          
           setShowSuccessModal(true);
         } else {
           console.error("Error al enviar los datos a mockapi.io");
@@ -58,10 +58,10 @@ const Alta = () => {
   };
 
   const validateData = () => {
-    // Implementa la lógica de validación de datos aquí
-    // Devuelve true si los datos son válidos, false de lo contrario
+    
+    
 
-    // Ejemplos de validación simples:
+    
     if (!formData.nombre.trim()) {
       console.error("Nombre del producto es obligatorio.");
       return false;

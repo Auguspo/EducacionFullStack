@@ -20,18 +20,18 @@ const Contacto = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Validar los datos antes de enviarlos
+    
     if (validateData()) {
-      // Lógica para enviar datos a tu backend o API de contacto
+      
       try {
-        // Simulando un tiempo de espera para la respuesta exitosa
-        // En una implementación real, espera la respuesta del servidor
+        
+        
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        // Actualizar el estado para mostrar el modal de éxito
+        
         setShowSuccessModal(true);
 
-        // Limpiar el formulario después del éxito
+        
         setFormData({
           nombre: '',
           email: '',
@@ -45,21 +45,21 @@ const Contacto = () => {
   };
 
   const validateData = () => {
-    // Implementa la lógica de validación de datos aquí
-    // Devuelve true si los datos son válidos, false de lo contrario
-    // Ejemplo de validación simple: verificar que el nombre no esté vacío
+    
+    
+    
     if (!formData.nombre.trim()) {
       console.error('Nombre es obligatorio.');
       return false;
     }
 
-    // Agrega más validaciones según tus necesidades...
+    
 
     return true;
   };
 
   const handleClose = () => {
-    // Cerrar el modal de éxito y realizar cualquier otra acción necesaria
+    
     setShowSuccessModal(false);
   };
 
