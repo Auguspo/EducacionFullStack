@@ -1,0 +1,16 @@
+{
+  "name": "desafio-2",
+  "version": "1.0.0",
+  "description": "desafio 2 vicente lopez",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "desafio2",
+    "vicente",
+    "lopez"
+  ],
+  "author": "Augusto Poletti",
+  "license": "ISC"
+}

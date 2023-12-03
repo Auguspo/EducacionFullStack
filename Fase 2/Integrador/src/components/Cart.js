@@ -90,7 +90,7 @@ const Cart = ({
                   </td>
                   <td className="align-middle text-center">
                     <div className="d-flex justify-content-center align-items-center">
-                      <Button
+                      <Button 
                         variant="danger"
                         onClick={() => removeFromCart(item.id)}
                       >

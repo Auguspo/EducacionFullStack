@@ -83,3 +83,36 @@ export const submitComentario = async (comentarioData) => {
     throw error;
   }
 };
+
+export const eliminarProducto = async (producto, productos, setProductos) => {
+  try {
+    // Buscar el ID correspondiente en la lista de productos
+    const productoAEliminar = productos.find((p) => (
+      p.nombre === producto.nombre &&
+      p.precio === producto.precio 
+      
+    ));
+
+    if (!productoAEliminar) {
+      console.error("No se encontró el producto en la lista.");
+      return;
+    }
+
+    // Realizar la solicitud DELETE a la API
+    const response = await fetch(`${API_BASE_URL}/${productoAEliminar.id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      // Actualizar el estado local después de la eliminación exitosa
+      setProductos((prevProductos) =>
+        prevProductos.filter((p) => p.id !== productoAEliminar.id)
+      );
+      console.log("Producto eliminado con éxito de la base de datos.");
+    } else {
+      console.error("Error al eliminar producto de la base de datos.");
+    }
+  } catch (error) {
+    console.error("Error al eliminar producto:", error);
+  }
+};

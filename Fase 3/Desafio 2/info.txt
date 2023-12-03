@@ -1,0 +1,20 @@
+{
+	"contenidoStr": "{\n  \"name\": \"desafio-2\",\n  \"version\": \"1.0.0\",\n  \"description\": \"desafio 2 vicente lopez\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"keywords\": [\n    \"desafio2\",\n    \"vicente\",\n    \"lopez\"\n  ],\n  \"author\": \"Augusto Poletti\",\n  \"license\": \"ISC\"\n}\n",
+	"contenidoObj": {
+		"name": "desafio-2",
+		"version": "1.0.0",
+		"description": "desafio 2 vicente lopez",
+		"main": "index.js",
+		"scripts": {
+			"test": "echo \"Error: no test specified\" && exit 1"
+		},
+		"keywords": [
+			"desafio2",
+			"vicente",
+			"lopez"
+		],
+		"author": "Augusto Poletti",
+		"license": "ISC"
+	},
+	"size": 307
+}
