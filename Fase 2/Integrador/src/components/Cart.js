@@ -1,4 +1,4 @@
-import React,{useState}from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Table, Button, Alert } from "react-bootstrap";
 
@@ -15,19 +15,13 @@ const Cart = ({
   );
   const [pedidoEnviado, setPedidoEnviado] = useState(false);
   const handleEnviarPedido = () => {
-    
-    
-
-    
     setPedidoEnviado(true);
 
-    
     clearCart();
   };
   return (
     <div className="container mt-5 min-vh-100 ">
       <h2 className="text-left mb-4">Carrito de Compras</h2>
-
       {
         <div className="table-responsive">
           <Table striped bordered hover>
@@ -90,7 +84,7 @@ const Cart = ({
                   </td>
                   <td className="align-middle text-center">
                     <div className="d-flex justify-content-center align-items-center">
-                      <Button 
+                      <Button
                         variant="danger"
                         onClick={() => removeFromCart(item.id)}
                       >
@@ -127,7 +121,8 @@ const Cart = ({
             <h2 className="text-lg">Total: ${total}</h2>
           </div>
         </div>
-      )} {pedidoEnviado && (
+      )}{" "}
+      {pedidoEnviado && (
         <Alert variant="success" className="mt-3 text-center">
           ¡Pedido enviado con éxito!
         </Alert>
