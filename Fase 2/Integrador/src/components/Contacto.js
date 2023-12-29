@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    asunto: '',
-    descripcion: '',
+    nombre: "",
+    email: "",
+    asunto: "",
+    descripcion: "",
   });
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -20,46 +20,35 @@ const Contacto = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (validateData()) {
-      
       try {
-        
-        
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        
         setShowSuccessModal(true);
 
-        
         setFormData({
-          nombre: '',
-          email: '',
-          asunto: '',
-          descripcion: '',
+          nombre: "",
+          email: "",
+          asunto: "",
+          descripcion: "",
         });
       } catch (error) {
-        console.error('Error al enviar datos de contacto:', error);
+        console.error("Error al enviar datos de contacto:", error);
       }
     }
   };
 
   const validateData = () => {
-    
-    
-    
     if (!formData.nombre.trim()) {
-      console.error('Nombre es obligatorio.');
+      console.error("Nombre es obligatorio.");
       return false;
     }
-
-    
 
     return true;
   };
 
   const handleClose = () => {
-    
     setShowSuccessModal(false);
   };
 
@@ -127,15 +116,11 @@ const Contacto = () => {
             required
           ></textarea>
         </div>
-        <button
-          type="submit"
-          className="btn btn-primary"
-        >
+        <button type="submit" className="btn btn-primary">
           Enviar Mensaje
         </button>
       </form>
 
-      {/* Modal de éxito */}
       <Modal show={showSuccessModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>¡Envío Exitoso!</Modal.Title>

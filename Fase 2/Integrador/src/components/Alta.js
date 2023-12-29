@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Modal, Row, Col, Table } from "react-bootstrap";
+import { Form, Button, Modal, Row, Col } from "react-bootstrap";
 import {
   getProductos,
   eliminarProducto,
   submitProducto,
 } from "../services/api";
+import Tabla from "./Tabla";
 
 const Alta = () => {
   const [formData, setFormData] = useState({
@@ -22,10 +23,11 @@ const Alta = () => {
   });
   const [productos, setProductos] = useState([]);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-
+  const [forceUpdate, setForceUpdate] = useState(false);
   useEffect(() => {
     getProductos().then((data) => setProductos(data));
-  }, []);
+  }, [forceUpdate]);
+
   const handleChange = (e) => {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -307,6 +309,11 @@ const Alta = () => {
             type="submit"
             variant="success"
             className="px-4 py-2 rounded w-50"
+            onClick={async () => {
+              await submitProducto(formData);
+              // Después de guardar el producto, forzar el re-renderizado
+              setForceUpdate((prev) => !prev);
+            }}
           >
             Guardar Producto
           </Button>
@@ -329,58 +336,21 @@ const Alta = () => {
                 edad_hasta: 0,
                 imagen: "",
               });
+              setForceUpdate((prev) => !prev);
             }}
             disabled={
               Object.values(formData).every((value) => value === "") ||
               !productos.find((p) => p.nombre === formData.nombre)
             }
           >
-          Borrar Producto
+            Borrar Producto
           </Button>
         </div>
       </Form>
 
-      {/* Lista de productos en forma de tabla */}
       <h3 className="mt-5">Lista de Productos</h3>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th className="align-middle col-auto text-center w-25">Imagen</th>
-            <th className="align-middle text-center">Nombre</th>
-            <th className="align-middle text-center">Precio</th>
-            <th className="align-middle text-center">Stock</th>
-            <th className="align-middle text-center">Categoría</th>
-            <th className="align-middle text-center">Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          {productos.map((producto) => (
-            <tr key={producto.id} onClick={() => handleProductClick(producto)}>
-              <td className="align-middle col-auto text-center">
-                {/* Aquí puedes colocar el código para mostrar la imagen */}
-                <img
-                  src={producto.imagen}
-                  className="img-fluid w-50"
-                  alt={producto.nombre}
-                />
-              </td>
-              <td className="align-middle text-center">{producto.nombre}</td>
-              <td className="align-middle text-center">${producto.precio}</td>
-              <td className="align-middle text-center">{producto.stock}</td>
-              <td className="align-middle text-center">
-                {/* Calcula y muestra el subtotal */}
-                {producto.categoria}
-              </td>
-              <td className="align-middle text-justify">
-                {/* Calcula y muestra el subtotal */}
-                {producto.desc_corta}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      <Tabla productos={productos} handleClick={handleProductClick} />
 
-      {/* Modal de éxito */}
       <Modal show={showSuccessModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Producto Guardado</Modal.Title>

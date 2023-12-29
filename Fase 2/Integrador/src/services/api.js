@@ -60,18 +60,47 @@ export const removeElementToCart = (cartItems, productoId) => {
 
 export const submitProducto = async (productoData) => {
   try {
-    const response = await fetch(API_BASE_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(productoData),
-    });
+    const existingProduct = await getProductByName(productoData.nombre);
 
-    const data = await response.json();
-    return data;
+    if (existingProduct) {
+      const response = await fetch(`${API_BASE_URL}/${existingProduct.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productoData),
+      });
+
+      const updatedData = await response.json();
+      console.log("Producto actualizado con éxito:", updatedData);
+      return updatedData;
+    } else {
+      const response = await fetch(API_BASE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productoData),
+      });
+
+      const newData = await response.json();
+      console.log("Producto creado con éxito:", newData);
+      return newData;
+    }
   } catch (error) {
     console.error("Error al enviar producto:", error);
+    throw error;
+  }
+};
+
+const getProductByName = async (productName) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}?nombre=${productName}`);
+    const data = await response.json();
+
+    return data.length > 0 ? data[0] : null;
+  } catch (error) {
+    console.error("Error al obtener producto por nombre:", error);
     throw error;
   }
 };
@@ -86,25 +115,20 @@ export const submitComentario = async (comentarioData) => {
 
 export const eliminarProducto = async (producto, productos, setProductos) => {
   try {
-    // Buscar el ID correspondiente en la lista de productos
-    const productoAEliminar = productos.find((p) => (
-      p.nombre === producto.nombre &&
-      p.precio === producto.precio 
-      
-    ));
+    const productoAEliminar = productos.find(
+      (p) => p.nombre === producto.nombre && p.precio === producto.precio
+    );
 
     if (!productoAEliminar) {
       console.error("No se encontró el producto en la lista.");
       return;
     }
 
-    // Realizar la solicitud DELETE a la API
     const response = await fetch(`${API_BASE_URL}/${productoAEliminar.id}`, {
       method: "DELETE",
     });
 
     if (response.ok) {
-      // Actualizar el estado local después de la eliminación exitosa
       setProductos((prevProductos) =>
         prevProductos.filter((p) => p.id !== productoAEliminar.id)
       );

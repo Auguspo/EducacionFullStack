@@ -25,13 +25,11 @@ const Home = ({ addToCart }) => {
   const handleAddToCart = (producto) => {
     addToCart(producto);
 
-    
     setAddedToCartMap((prevMap) => ({
       ...prevMap,
       [producto.id]: true,
     }));
 
-    
     setTimeout(() => {
       setAddedToCartMap((prevMap) => ({
         ...prevMap,
@@ -42,43 +40,45 @@ const Home = ({ addToCart }) => {
 
   return (
     <div>
-      <div className="container mt-5" >
+      <div className="container mt-5">
         <h2 className="text-left mb-4">Productos</h2>
         <Row xs={1} sm={2} md={3} lg={4} xl={5} className="mx-auto">
           {productos.map((producto) => (
             <Col key={producto.id} className="mb-4">
-                   <Card className="h-100">
-              <Card.Img variant="top" src={producto.imagen} className="img-fluid" />
-              <Card.Body className="d-flex flex-column justify-content-between">
-                <div>
-                  <Card.Title >{producto.nombre}</Card.Title>
-                  <Card.Text>${producto.precio}</Card.Text>
-                  <Card.Text>{producto.descripcionCorta}</Card.Text>
-                </div>
-                <div>
-                  <Button
-                    variant={addedToCartMap[producto.id] ? "success" : "primary"}
-                    onClick={() => handleAddToCart(producto)}
-                    className="mb-2"
-                  >
-                    {addedToCartMap[producto.id]
-                      ? "Añadido al Carrito"
-                      : "Agregar al Carrito"}
-                  </Button>
-                  <Button
-                    variant="link"
-                    onClick={() => openModal(producto)}
-                  >
-                    Ver Detalles
-                  </Button>
-                </div>
-              </Card.Body>
-            </Card>
+              <Card className="h-100">
+                <Card.Img
+                  variant="top"
+                  src={producto.imagen}
+                  className="img-fluid"
+                />
+                <Card.Body className="d-flex flex-column justify-content-between">
+                  <div>
+                    <Card.Title>{producto.nombre}</Card.Title>
+                    <Card.Text>${producto.precio}</Card.Text>
+                    <Card.Text>{producto.descripcionCorta}</Card.Text>
+                  </div>
+                  <div>
+                    <Button
+                      variant={
+                        addedToCartMap[producto.id] ? "success" : "primary"
+                      }
+                      onClick={() => handleAddToCart(producto)}
+                      className="mb-2"
+                    >
+                      {addedToCartMap[producto.id]
+                        ? "Añadido al Carrito"
+                        : "Agregar al Carrito"}
+                    </Button>
+                    <Button variant="link" onClick={() => openModal(producto)}>
+                      Ver Detalles
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
             </Col>
           ))}
         </Row>
 
-        {/* Modal para mostrar detalles del producto */}
         <Modal show={showModal} onHide={closeModal} centered>
           <Modal.Header closeButton>
             <Modal.Title>{selectedProduct?.nombre}</Modal.Title>
