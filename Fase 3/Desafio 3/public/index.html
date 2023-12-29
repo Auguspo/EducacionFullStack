@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .form-container {
+        display: flex;
+        gap: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      input {
+        padding: 8px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <div>
+        <h1>Formulario de Clientes</h1>
+        <form action="/api/clientes" method="POST" autocomplete="off">
+          <label for="nombreCliente">Nombre:</label>
+          <input type="text" id="nombreCliente" name="nombre" required><br>
+          <label for="apellidoCliente">Apellido:</label>
+          <input type="text" id="apellidoCliente" name="apellido" required><br>
+          <label for="edadCliente">Edad:</label>
+          <input type="number" id="edadCliente" name="edad" required><br>
+          <label for="dniCliente">DNI:</label>
+          <input type="text" id="dniCliente" name="dni" required><br>
+          <button type="submit">Agregar Cliente</button>
+        </form>
+      </div>
+      <div>
+        <h1>Formulario de Artículos</h1>
+        <form action="/api/articulos" method="POST" autocomplete="off">
+          <label for="nombreArticulo">Nombre:</label>
+          <input type="text" id="nombreArticulo" name="nombre" required><br>
+          <label for="precioArticulo">Precio:</label>
+          <input type="number" id="precioArticulo" name="precio" required><br>
+          <label for="stockArticulo">Stock:</label>
+          <input type="number" id="stockArticulo" name="stock" required><br>
+          <button type="submit">Agregar Artículo</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
